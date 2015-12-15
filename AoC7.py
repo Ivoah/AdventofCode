@@ -12,45 +12,60 @@ input = ['123 -> x',
 '''
 
 gates = ['AND', 'OR', 'NOT', 'LSHIFT', 'RSHIFT']
-circuit = {}
 
-cache = {}
-def signal(circuit, wire):
+def signal(wire):
 	try:
 		return int(wire)
 	except ValueError:
-		global cache
-		if wire not in cache.values():
-			if circuit[wire]['gate'] == 'NONE':
-				cache[wire] = signal(circuit, circuit[wire]['inputs'][0])
-			elif circuit[wire]['gate'] == 'AND':
-				cache[wire] = signal(circuit, circuit[wire]['inputs'][0]) & signal(circuit, circuit[wire]['inputs'][1])
-			elif circuit[wire]['gate'] == 'OR':
-				cache[wire] = signal(circuit, circuit[wire]['inputs'][0]) | signal(circuit, circuit[wire]['inputs'][1])
-			elif circuit[wire]['gate'] == 'NOT':
-				cache[wire] = 65535 - signal(circuit, circuit[wire]['inputs'][0])
-			elif circuit[wire]['gate'] == 'LSHIFT':
-				cache[wire] = signal(circuit, circuit[wire]['inputs'][0]) << signal(circuit, circuit[wire]['inputs'][1])
-			elif circuit[wire]['gate'] == 'RSHIFT':
-				cache[wire] = signal(circuit, circuit[wire]['inputs'][0]) >> signal(circuit, circuit[wire]['inputs'][1])
-		return cache[wire]
+		global circuit
+		if circuit[wire]['gate'] == 'NONE':
+			v = signal(circuit[wire]['inputs'][0])
+			circuit[wire] = {'gate': 'NONE', 'inputs': [v]}
+			return v
+		elif circuit[wire]['gate'] == 'AND':
+			v = signal(circuit[wire]['inputs'][0]) & signal(circuit[wire]['inputs'][1])
+			circuit[wire] = {'gate': 'NONE', 'inputs': [v]}
+			return v
+		elif circuit[wire]['gate'] == 'OR':
+			v = signal(circuit[wire]['inputs'][0]) | signal(circuit[wire]['inputs'][1])
+			circuit[wire] = {'gate': 'NONE', 'inputs': [v]}
+			return v
+		elif circuit[wire]['gate'] == 'NOT':
+			circuit[wire] = 65535 - signal(circuit[wire]['inputs'][0])
+		elif circuit[wire]['gate'] == 'LSHIFT':
+			v = signal(circuit[wire]['inputs'][0]) << signal(circuit[wire]['inputs'][1])
+			circuit[wire] = {'gate': 'NONE', 'inputs': [v]}
+			return v
+		elif circuit[wire]['gate'] == 'RSHIFT':
+			v = signal(circuit[wire]['inputs'][0]) >> signal(circuit[wire]['inputs'][1])
+			circuit[wire] = {'gate': 'NONE', 'inputs': [v]}
+			return v
+		return circuit[wire]
 
-for ln, line in enumerate(input):
-	line = line.split()
-	wire = line.pop()
-	line.pop()
-	inputs = []
-	gate = 'NONE'
-	for i in line:
-		if i in gates:
-			gate = i
-		else:
-			inputs.append(i)
+def readCircuit(input):
+	c = {}
+	for ln, line in enumerate(input):
+		line = line.split()
+		wire = line.pop()
+		line.pop()
+		inputs = []
+		gate = 'NONE'
+		for i in line:
+			if i in gates:
+				gate = i
+			else:
+				inputs.append(i)
 
-	circuit[wire] = {'gate': gate, 'inputs': inputs, 'line': ln + 1}
+		c[wire] = {'gate': gate, 'inputs': inputs}
 
-#print circuit
-print signal(circuit, 'a')
+	return c
+
+circuit = readCircuit(input)
+a = signal('a')
+print 'Wire a: {}'.format(a)
+circuit = readCircuit(input)
+circuit['b'] = {'gate': 'NONE', 'inputs': [a]}
+print 'Wire a: {}'.format(signal('a'))
 
 #for i in 'defghixy':
 #	print '{}: {}'.format(i, signal(circuit, i))

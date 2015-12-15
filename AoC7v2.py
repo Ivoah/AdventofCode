@@ -23,7 +23,7 @@ def signal(circuit, wire):
 			if answer != answer.replace(key, circuit[key]):
 				answer = answer.replace(key, circuit[key])
 				re = True
-		print answer
+	print answer
 	return eval(answer)
 
 for ln, line in enumerate(input):
