@@ -27,16 +27,25 @@ def score(ing):
 
     return reduce(lambda x, y: x*y, [0 if v < 0 else v for v in t.values()])
 
-m = 0
+def cals(ing):
+    t = 0
+    for i in ing:
+        t += ing[i]['calories'] * ing[i]['n']
+
+    return t
+
+m1 = 0
+m2 = 0
 for a in range(1, 101):
     for b in range(a, 101 - a):
         for c in range(b, 101 - a - b):
             d = 100 - a - b - c
             for i in permutations([a, b, c, d]):
-                ingredients['Sprinkles']['n'] = a
-                ingredients['Butterscotch']['n'] = b
-                ingredients['Chocolate']['n'] = c
-                ingredients['Candy']['n'] = d
-                m = max(m, score(ingredients))
+                ingredients['Sprinkles']['n'] = i[0]
+                ingredients['Butterscotch']['n'] = i[1]
+                ingredients['Chocolate']['n'] = i[2]
+                ingredients['Candy']['n'] = i[3]
+                m1 = max(m1, score(ingredients))
+                if cals(ingredients) == 500: m2 = max(m2, score(ingredients))
 
-print m
+print m1, m2
