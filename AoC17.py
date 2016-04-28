@@ -28,14 +28,6 @@ for line in input:
 #containers = [Container(20), Container(15), Container(10), Container(5), Container(5)]
 containers.sort()
 
-_seen = []
-def seen(perm):
-    for s in _seen:
-        if s in permutations(perm):
-            return True
-    _seen.append(perm)
-    return False
-
 solutions = []
 for i in range(sum([2**i for i in range(len(containers))])):
     b = bin(i)[:1:-1]
