@@ -20,8 +20,7 @@ for instr in data:
         if hq == () and (visited[-1] in visited[:-1]):
             hq = visited[-1]
 
-print(visited)
-plt.scatter(*zip(*visited))
-plt.show()
 print(abs(visited[-1][0]) + abs(visited[-1][1]))
 print(abs(hq[0]) + abs(hq[1]))
+plt.plot(*zip(*visited))
+plt.show()
