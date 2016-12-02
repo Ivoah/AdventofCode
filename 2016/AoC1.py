@@ -1,5 +1,5 @@
 import sys
-del sys.path[1]
+#del sys.path[1]
 import matplotlib.pyplot as plt
 
 data = [(a[0], int(a[1:])) for a in open('1.in').read().split(', ')]
