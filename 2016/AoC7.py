@@ -23,8 +23,8 @@ def tls(ip):
 
 def ssl(ip):
     in_bracket = False
-    aba = None
-    bab = None
+    abas = []
+    babs = []
     for i in range(len(ip)):
         if ip[i] == '[':
             in_bracket = True
@@ -33,13 +33,17 @@ def ssl(ip):
         try:
             if ip[i] == ip[i+2] and ip[i] != ip[i+1]:
                 if in_bracket:
-                    bab = ip[i:i+3]
-                    if aba and aba[0] == bab[1]:
-                        return True
+                    babs.append(ip[i:i+3])
+                    for aba in abas:
+                        for bab in babs:
+                            if aba and aba[0] == bab[1] and aba[1] == bab[0]:
+                                return True
                 else:
-                    aba = ip[i:i+3]
-                    if bab and aba[0] == bab[1]:
-                        return True
+                    abas.append(ip[i:i+3])
+                    for aba in abas:
+                        for bab in babs:
+                            if bab and aba[0] == bab[1] and aba[1] == bab[0]:
+                                return True
         except IndexError:
             return False
 
@@ -51,8 +55,8 @@ total_ssl = 0
 for ip in ips:
     if tls(ip):
         total_tls += 1
-    if ssl(ip): print(ip)
     if ssl(ip):
         total_ssl += 1
 
-print(total_tls, total_ssl)
+print(total_tls)
+print(total_ssl)
