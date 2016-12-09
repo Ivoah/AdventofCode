@@ -19,6 +19,7 @@ def real(room):
             decname += chr(
                 ((ord(c) + id) - 97)%26 + 97
             )
+
     if decname == 'northpole object storage':
         print(id)
 
