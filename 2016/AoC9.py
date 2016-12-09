@@ -2,11 +2,11 @@ from collections import OrderedDict
 
 code = open('9.in').read()
 
-def decode(string):
+def decode(string, length):
     part1 = 0
     part2 = 0
     i = 0
-    while i < len(string):
+    while i < length:
         if string[i] == '(':
             n = ''
             while string[i] != 'x':
@@ -20,7 +20,7 @@ def decode(string):
             b = int(n[:-1])
             i += 1
             part1 += a*b
-            part2 += decode(string[i:i+a])[1]*b
+            part2 += decode(string[i:i+a], a)[1]*b
             i += a
         else:
             part1 += 1
@@ -29,4 +29,4 @@ def decode(string):
 
     return (part1, part2)
 
-print(decode(code))
+print(decode(code, len(code)))
