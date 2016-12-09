@@ -1,3 +1,5 @@
+import drawille
+
 instructions = open('8.in').readlines()
 screen = [[' ']*50 for i in range(6)]
 
@@ -31,3 +33,10 @@ for row in screen:
 
 print(lit)
 print('\n'.join([''.join(c) for c in screen]))
+canvas = drawille.Canvas()
+for y, row in enumerate(screen):
+    for x, c in enumerate(row):
+        if c == '#':
+            canvas.set(x, y)
+
+print(canvas.frame())
