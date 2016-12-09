@@ -2,31 +2,9 @@ from collections import OrderedDict
 
 code = open('9.in').read()
 
-output = ''
-i = 0
-while i < len(code):
-    if code[i] == '(':
-        n = ''
-        while code[i] != 'x':
-            i += 1
-            n += code[i]
-        a = int(n[:-1])
-        n = ''
-        while code[i] != ')':
-            i += 1
-            n += code[i]
-        b = int(n[:-1])
-        i += 1
-        output += code[i:i+a]*b
-        i += a
-    else:
-        output += code[i]
-        i += 1
-
-print(len(output))
-
-def find_markers(string):
-    output = 0
+def decode(string):
+    part1 = 0
+    part2 = 0
     i = 0
     while i < len(string):
         if string[i] == '(':
@@ -41,12 +19,14 @@ def find_markers(string):
                 n += string[i]
             b = int(n[:-1])
             i += 1
-            output += find_markers(string[i:i+a])*b
+            part1 += a*b
+            part2 += decode(string[i:i+a])[1]*b
             i += a
         else:
-            output += 1
+            part1 += 1
+            part2 += 1
             i += 1
 
-    return output
+    return (part1, part2)
 
-print(find_markers(code))
+print(decode(code))
