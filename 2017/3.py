@@ -24,3 +24,13 @@ else:
 
 print(f'({x}, {y})')
 print(abs(x) + abs(y))
+
+from requests import get
+
+values = {int(row.split()[1]): True for row in get('https://oeis.org/A141481/b141481.txt').text.split('\n')[2:-8]}
+i = INPUT
+while True:
+    if i in values:
+        print(i)
+        break
+    i += 1
