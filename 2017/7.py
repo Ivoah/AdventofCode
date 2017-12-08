@@ -46,6 +46,5 @@ def fixed(tree):
             if weight(child) == counts[-1][0]:
                 return counts[0][0] - (weight(child) - child['weight'])
 
-
 tree = build_tree(root)
 print(fixed(tree))
