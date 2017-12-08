@@ -1,18 +1,8 @@
+import collections
+
 input = {}
 
-for line in '''pbga (66)
-xhth (57)
-ebii (61)
-havc (66)
-ktlj (57)
-fwft (72) -> ktlj, cntj, xhth
-qoyq (66)
-padx (45) -> pbga, havc, qoyq
-tknk (41) -> ugml, padx, fwft
-jptl (61)
-ugml (68) -> gyxo, ebii, jptl
-gyxo (61)
-cntj (57)'''.split('\n'): #open('7.in').readlines():
+for line in open('7.in').readlines():
     line = line.split()
     input[line[0]] = {
         'weight': int(line[1].strip('()')),
@@ -41,10 +31,21 @@ def balanced(tree):
     return len(set(weight(child) for child in tree['children'].values())) == 1
 
 def fixed(tree):
-    if balanced(tree):
-        return sum(fixed(child) for child in tree['children'].values())
-    else:
-        pass
+    current = tree
+    while True:
+        c = False
+        for child in current['children'].values():
+            if not balanced(child):
+                current = child
+                c = True
+        if c: continue
+
+        counter = collections.Counter(weight(child) for child in current['children'].values())
+        counts = counter.most_common()
+        for child in current['children'].values():
+            if weight(child) == counts[-1][0]:
+                return counts[0][0] - (weight(child) - child['weight'])
+
 
 tree = build_tree(root)
-#print(fixed(tree))
+print(fixed(tree))
