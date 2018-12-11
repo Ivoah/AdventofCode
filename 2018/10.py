@@ -21,6 +21,7 @@ add_tuple = lambda t1, t2: (t1[0] + t2[0], t1[1] + t2[1])
 sub_tuple = lambda t1, t2: (t1[0] - t2[0], t1[1] - t2[1])
 
 last_size = size(stars)
+seconds = 0
 while True:
     for star in stars:
         star['position'] = add_tuple(star['position'], star['velocity'])
@@ -29,9 +30,8 @@ while True:
     if new_size[0] > last_size[0] or new_size[1] > last_size[1]:
         break
 
+    seconds += 1
     last_size = new_size
-    print(last_size)
-
 
 for star in stars:
     star['position'] = sub_tuple(star['position'], star['velocity'])
@@ -41,3 +41,5 @@ corner = (min(map(lambda star: star['position'][0], stars)), min(map(lambda star
 for star in stars:
     img.putpixel(sub_tuple(star['position'], corner), 1)
 img.save(f'10.png')
+
+print(seconds)
