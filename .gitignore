@@ -1,3 +1,6 @@
 *.8xp
 *.html
 .DS_Store
+.idea/
+.metals/
+.vscode/
