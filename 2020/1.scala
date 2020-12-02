@@ -1,7 +1,3 @@
-#!/bin/sh
-exec scala "$0" "$@"
-!#
-
 import scala.io.Source
 
 val report = Source.fromFile("1.in").getLines().map(_.toInt).toSeq
