@@ -1,7 +1,7 @@
 p0 = set()
 p1 = set()
 
-with open('3.in') as f:
+with open('3.txt') as f:
     i0 = f.readline().strip().split(',')
     i1 = f.readline().strip().split(',')
 

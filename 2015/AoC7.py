@@ -1,4 +1,4 @@
-input = open('7.in').readlines()
+input = open('7.txt').readlines()
 '''
 input = ['123 -> x',
 		 '456 -> y',

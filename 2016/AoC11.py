@@ -2,7 +2,7 @@ from itertools import permutations
 
 floors = []
 
-for i, floor in enumerate(open('11.in').readlines()):
+for i, floor in enumerate(open('11.txt').readlines()):
     items = ' '.join(floor.split()[4:]).split(', ')
     it = []
     for item in items:

@@ -1,7 +1,7 @@
 from itertools import permutations
 from sys import maxint
 
-input = open('13.in').readlines()
+input = open('13.txt').readlines()
 
 people = {}
 

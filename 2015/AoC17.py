@@ -1,6 +1,6 @@
 from itertools import permutations
 
-input = open('17.in').readlines()
+input = open('17.txt').readlines()
 
 class Container:
     def __init__(self, size):

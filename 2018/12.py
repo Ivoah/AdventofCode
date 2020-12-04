@@ -1,4 +1,4 @@
-with open('12.in') as f:
+with open('12.txt') as f:
     input = f.readlines()
 initial_state = set(i for i, p in enumerate(input[0][len('initial state: '):]) if p == '#')
 rules = {tuple(r[i] == '#' for i in range(5)): r[9] == '#' for r in input[2:]}

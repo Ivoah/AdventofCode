@@ -1,6 +1,6 @@
 from collections import Counter
 
-input = open('3.in').read()
+input = open('3.txt').read()
 deliveries = [(0, 0)]
 santa_deliveries = [(0, 0)]
 robot_santa_deliveries = [(0, 0)]

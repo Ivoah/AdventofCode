@@ -1,6 +1,6 @@
 import drawille
 
-instructions = open('8.in').readlines()
+instructions = open('8.txt').readlines()
 screen = [[' ']*50 for i in range(6)]
 
 def shift(seq, n):

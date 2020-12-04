@@ -1,4 +1,4 @@
-input = open('14.in').readlines()
+input = open('14.txt').readlines()
 
 class Reindeer():
     def __init__(self, name, speed, sleep):

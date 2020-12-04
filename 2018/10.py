@@ -9,7 +9,7 @@ stars = [
     {
         'position': (int(match[1]), int(match[2])),
         'velocity': (int(match[3]), int(match[4]))
-    } for match in pattern.finditer(open('10.in').read())
+    } for match in pattern.finditer(open('10.txt').read())
 ]
 
 size = lambda stars: (

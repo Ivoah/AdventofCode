@@ -5,7 +5,7 @@ bot 1 gives low to output 1 and high to bot 0
 bot 0 gives low to output 2 and high to output 0
 value 2 goes to bot 2
 '''.split('\n')
-instructions = open('10.in').readlines()
+instructions = open('10.txt').readlines()
 
 class Bot:
     def __init__(self, bots, outputs, bot_num):

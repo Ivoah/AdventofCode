@@ -2,7 +2,7 @@ import collections
 
 cnts = collections.Counter()
 
-ids = open('2.in').readlines()
+ids = open('2.txt').readlines()
     
 for id in ids:
     cnt = collections.Counter(id)

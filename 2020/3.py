@@ -1,6 +1,6 @@
 import math
 
-with open('3.in') as f:
+with open('3.txt') as f:
     _map = f.read().splitlines()
 
 def trees(slope):

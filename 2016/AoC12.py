@@ -1,4 +1,4 @@
-code = open('12.in').readlines()
+code = open('12.txt').readlines()
 
 class CPU:
     def __init__(self, code, initial_state = None):

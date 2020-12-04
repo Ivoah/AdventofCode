@@ -1,6 +1,6 @@
 cloth = [0]*1000*1000
 
-claims = (lambda i: [((int(c[2].split(',')[0]), int(c[2].split(',')[1][:-1])), (int(c[3].split('x')[0]), int(c[3].split('x')[1]))) for c in i])(list(map(str.split, open('3.in').readlines())))
+claims = (lambda i: [((int(c[2].split(',')[0]), int(c[2].split(',')[1][:-1])), (int(c[3].split('x')[0]), int(c[3].split('x')[1]))) for c in i])(list(map(str.split, open('3.txt').readlines())))
 
 for claim in claims:
     for r in range(claim[0][1], claim[0][1] + claim[1][1]):

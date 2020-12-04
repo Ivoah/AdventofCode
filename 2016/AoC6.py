@@ -1,6 +1,6 @@
 import collections
 
-data = open('6.in').read()
+data = open('6.txt').read()
 
 msg1 = ''
 msg2 = ''

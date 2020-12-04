@@ -1,8 +1,8 @@
-print(eval(''.join(open('1.in').read().split())))
+print(eval(''.join(open('1.txt').read().split())))
 
 freqs = {0: True}
 freq = 0
-changes = list(map(int, open('1.in').read().split()))
+changes = list(map(int, open('1.txt').read().split()))
 
 c = 0
 while True:

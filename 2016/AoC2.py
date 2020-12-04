@@ -1,4 +1,4 @@
-instructions = open('2.in').readlines()
+instructions = open('2.txt').readlines()
 keypad = [
     [' ', ' ', '1', ' ', ' '],
     [' ', '2', '3', '4', ' '],

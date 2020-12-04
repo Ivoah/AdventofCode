@@ -1,4 +1,4 @@
-banks = list(map(int, open('6.in').read().split()))
+banks = list(map(int, open('6.txt').read().split()))
 
 prev = [banks[:]]
 n = 0

@@ -1,5 +1,5 @@
 def run(a0, a1):
-    mem = list(map(int, open('2.in').read().split(',')))
+    mem = list(map(int, open('2.txt').read().split(',')))
 
     mem[1] = a0
     mem[2] = a1

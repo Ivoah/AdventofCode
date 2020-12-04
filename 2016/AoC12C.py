@@ -9,7 +9,7 @@ int main() {
 '''
 
 
-for i, line in enumerate(open('12.in').readlines()):
+for i, line in enumerate(open('12.txt').readlines()):
     instr = line.split()[0]
     args = line.split()[1:]
     if instr == 'cpy':

@@ -1,6 +1,6 @@
 from collections import Counter
 
-input = open('5.in').readlines()
+input = open('5.txt').readlines()
 
 vowels = 'aeiou'
 naughty_strings = ['ab', 'cd', 'pq','xy']

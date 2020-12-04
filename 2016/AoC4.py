@@ -1,5 +1,5 @@
 import collections
-rooms = open('4.in').read().split()
+rooms = open('4.txt').read().split()
 ids = 0
 
 def real(room):

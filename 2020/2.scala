@@ -2,7 +2,7 @@ import scala.io.Source
 
 val patt = raw"(\d+)-(\d+) (\w): (\w+)".r
 
-val lines = Source.fromFile("2.in").getLines().toSeq
+val lines = Source.fromFile("2.txt").getLines().toSeq
 println(lines.count {
   case patt(min, max, c, pw) => (min.toInt to max.toInt).contains(pw.count(_ == c.head))
 })

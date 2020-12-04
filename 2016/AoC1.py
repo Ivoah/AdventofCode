@@ -1,7 +1,7 @@
 import sys
 import matplotlib.pyplot as plt
 
-data = [(a[0], int(a[1:])) for a in open('1.in').read().split(', ')]
+data = [(a[0], int(a[1:])) for a in open('1.txt').read().split(', ')]
 visited = [(0, 0)]
 hq = ()
 dir = 0

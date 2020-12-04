@@ -3,7 +3,7 @@ import re
 patt = re.compile(r'(\S+) => (\S+)')
 replacements = {}
 molecule = ''
-for line in open('19.in'):
+for line in open('19.txt'):
     m = patt.match(line)
     if m:
         try:

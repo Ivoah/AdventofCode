@@ -1,4 +1,4 @@
-ips = open('7.in').readlines()
+ips = open('7.txt').readlines()
 samples = '''aba[bab]xyz
 xyx[xyx]xyx
 aaa[kek]eke

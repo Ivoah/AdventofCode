@@ -1,4 +1,4 @@
-input = open('8.in').readlines()
+input = open('8.txt').readlines()
 
 literal = 0
 mem = 0

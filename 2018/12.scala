@@ -1,7 +1,7 @@
 import scala.annotation.tailrec
 import scala.io.Source
 
-val input = Source.fromFile("12.in").getLines().toSeq
+val input = Source.fromFile("12.txt").getLines().toSeq
 val initial_state = input.head.slice("initial state: ".length, input.head.length).zipWithIndex.collect{case ('#', i) => i}.toSet
 implicit val rules: Map[Seq[Boolean], Boolean] = input.slice(2, input.length).map(r => ((0 until 5).map(i => r(i) == '#'), r(9) == '#')).toMap[Seq[Boolean], Boolean]
 

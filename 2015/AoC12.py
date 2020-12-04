@@ -1,6 +1,6 @@
 import json
 
-input = json.load(open('12.in'))
+input = json.load(open('12.txt'))
 
 def count(j):
     if type(j) == int:

@@ -2,7 +2,7 @@ import collections
 
 input = {}
 
-for line in open('7.in').readlines():
+for line in open('7.txt').readlines():
     line = line.split()
     input[line[0]] = {
         'weight': int(line[1].strip('()')),

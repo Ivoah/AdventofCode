@@ -1,4 +1,4 @@
-stream = open('9.in').read()
+stream = open('9.txt').read()
 
 total_score = 0
 current_score = 0

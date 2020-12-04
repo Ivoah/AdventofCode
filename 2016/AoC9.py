@@ -1,6 +1,6 @@
 from collections import OrderedDict
 
-code = open('9.in').read()
+code = open('9.txt').read()
 
 def decode(string, length):
     part1 = 0

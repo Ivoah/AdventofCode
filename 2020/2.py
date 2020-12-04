@@ -2,7 +2,7 @@ import re
 
 patt = re.compile(r'(\d+)-(\d+) (\w): (\w+)')
 
-with open('2.in') as f:
+with open('2.txt') as f:
     lines = f.readlines()
 
 valid = 0

@@ -1,4 +1,4 @@
-input = open('6.in').readlines()
+input = open('6.txt').readlines()
 
 lights = [[False for i in range(1000)] for i in range(1000)]
 lights2 = [[0 for i in range(1000)] for i in range(1000)]

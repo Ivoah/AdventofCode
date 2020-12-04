@@ -1,6 +1,6 @@
 valid = 0
 
-tris = open('3.in').read()
+tris = open('3.txt').read()
 for tri in tris.split('\n'):
     a, b, c = sorted(map(int, tri.split()))
     if c < a + b:

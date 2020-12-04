@@ -3,7 +3,7 @@
 rules = {'s': [2, 3], 'b': [3]}
 
 grid = []
-for line in open('18.in'):
+for line in open('18.txt'):
     l = []
     for char in line.strip():
         l.append({'#': True, '.': False}[char])

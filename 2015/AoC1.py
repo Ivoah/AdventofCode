@@ -1,4 +1,4 @@
-input = open('1.in').read()
+input = open('1.txt').read()
 floor = 0
 basement = 0
 

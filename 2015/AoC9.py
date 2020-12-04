@@ -1,7 +1,7 @@
 from itertools import permutations
 from sys import maxint
 
-input = open('9.in').readlines()
+input = open('9.txt').readlines()
 
 dists = {}
 locations = []

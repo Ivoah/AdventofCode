@@ -1,6 +1,6 @@
 import string
 
-with open('5.in') as f:
+with open('5.txt') as f:
     polymer = f.read().strip()
 
 

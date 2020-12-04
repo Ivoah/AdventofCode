@@ -1,7 +1,7 @@
 import collections
 import operator
 
-instructions = open('8.in').readlines()
+instructions = open('8.txt').readlines()
 registers = collections.defaultdict(lambda: 0)
 
 conds = {

@@ -27,7 +27,7 @@ val validators = Map(
   "pid" -> ((pid: String) => pid.matches("\\d{9}")),
 )
 
-val passports = Source.fromFile("4.in")
+val passports = Source.fromFile("4.txt")
   .mkString
   .split("\n\n")
   .map(_.split('\n').mkString(" "))

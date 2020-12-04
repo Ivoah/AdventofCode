@@ -1,4 +1,4 @@
-input = open('2.in').readlines()
+input = open('2.txt').readlines()
 total_paper = 0
 total_ribbon = 0
 

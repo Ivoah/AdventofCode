@@ -1,4 +1,4 @@
-jumps = list(map(int, open('5.in').readlines()))
+jumps = list(map(int, open('5.txt').readlines()))
 
 n = 0
 pc = 0
@@ -10,7 +10,7 @@ while 0 <= pc < len(jumps):
 
 print(n)
 
-jumps = list(map(int, open('5.in').readlines()))
+jumps = list(map(int, open('5.txt').readlines()))
 
 n = 0
 pc = 0

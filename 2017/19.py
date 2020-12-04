@@ -1,4 +1,4 @@
-diag = open('19.in').read().splitlines()
+diag = open('19.txt').read().splitlines()
 
 at = lambda t0, t1: tuple(t0[i] + t1[i] for i in range(min(len(t0), len(t1))))
 
