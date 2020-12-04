@@ -1,12 +1,12 @@
 import math
 
 with open('3.in') as f:
-    _map = f.readlines()
+    _map = f.read().splitlines()
 
 def trees(slope):
     t = 0
     for i, y in enumerate(range(0, len(_map), slope[1])):
-        if _map[y][i*slope[0]%len(_map[y].strip())] == '#':
+        if _map[y][i*slope[0]%len(_map[y])] == '#':
             t += 1
     return t
 
