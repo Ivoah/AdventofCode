@@ -1,5 +1,5 @@
 # Advent of Code
 
-Ivoah's python solutions for Advent of Code puzzles.
+Ivoah's solutions for Advent of Code puzzles.
 
 See: http://adventofcode.com
