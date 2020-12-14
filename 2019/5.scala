@@ -33,7 +33,8 @@ case class Intcode(val mem: mutable.Seq[Int], var pc: Int = 0, var running: Bool
   val lengths = Map(1 -> 3, 2 -> 3, 3 -> 1, 4 -> 1, 5 -> 2, 6 -> 2, 7 -> 3, 8 -> 3, 99 -> 0)
 
   def run(): Unit = while (running) step()
-  def step(): Unit = {
+  def run(input: Int): Unit = while (running) step(Some(input))
+  def step(input: Option[Int]= None): Unit = {
     implicit val _mem = mem
     val instr = mem(pc)
     val op = instr % 100
@@ -43,7 +44,7 @@ case class Intcode(val mem: mutable.Seq[Int], var pc: Int = 0, var running: Bool
     (op, params) match {
       case (1, Seq(p1, p2, dest)) => dest.set(p1.get + p2.get)
       case (2, Seq(p1, p2, dest)) => dest.set(p1.get * p2.get)
-      case (3, Seq(dest)) => print("> "); dest.set(StdIn.readInt())
+      case (3, Seq(dest)) => print("> "); dest.set(input.map(n => {println(n);n}).getOrElse(StdIn.readInt()))
       case (4, Seq(addr)) => println(addr.get)
       case (5, Seq(test, dest)) => if (test.get != 0) pc = dest.get - (params.length + 1)
       case (6, Seq(test, dest)) => if (test.get == 0) pc = dest.get - (params.length + 1)
@@ -55,5 +56,8 @@ case class Intcode(val mem: mutable.Seq[Int], var pc: Int = 0, var running: Bool
   }
 }
 
-val cpu = Intcode(Intcode.load("5.txt"))
-cpu.run()
+val program = Intcode.load("5.txt")
+for (input <- Seq(1, 5)) {
+  val cpu = Intcode(program)
+  cpu.run(input)
+}
