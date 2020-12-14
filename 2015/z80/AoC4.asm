@@ -1,6 +1,6 @@
 .binarymode TI8X
 .variablename AOC4
-.include "ti83plus.inc"
+.include "ti83plus.inc.min"
 
 .org userMem - 2
 .db $BB, $6D

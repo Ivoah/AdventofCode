@@ -1,0 +1,12 @@
+#define bcall(xxxx) rst 28h \ .dw xxxx
+
+userMem	    .equ 9D95h
+_RclAns	    .equ 4AD7h
+_MD5Init    .equ 808Dh
+_MD5Update  .equ 8090h
+_MD5Final   .equ 8018h
+MD5Hash     .equ 8292h
+_ClrLCDFull .equ 4540h
+curRow      .equ 844Bh
+_PutS       .equ 450Ah
+_newline    .equ 452Eh
