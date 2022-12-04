@@ -7,8 +7,7 @@ def main() = {
 
   println(assignmentPairs.count { pair =>
     (pair._1.start >= pair._2.start && pair._1.end <= pair._2.end)
-    ||
-    (pair._2.start >= pair._1.start && pair._2.end <= pair._1.end)
+    || (pair._2.start >= pair._1.start && pair._2.end <= pair._1.end)
   })
 
   println(assignmentPairs.count { pair =>
