@@ -1,9 +1,9 @@
 @main
 def main() = {
-  val stacks = io.Source.fromFile("4.txt").getLines().takeWhile(_.nonEmpty).toSeq.dropRight(1).map(_.grouped(4).map(_(1)).toSeq).transpose.map(_.filter(_ != ' '))
+  val stacks = io.Source.fromFile("5.txt").getLines().takeWhile(_.nonEmpty).toSeq.dropRight(1).map(_.grouped(4).map(_(1)).toSeq).transpose.map(_.filter(_ != ' '))
     
   val move_re = raw"move (\d+) from (\d+) to (\d+)".r
-  val moves = io.Source.fromFile("4.txt").getLines().collect {
+  val moves = io.Source.fromFile("5.txt").getLines().collect {
     case move_re(num, from, to) => (num.toInt, from.toInt - 1, to.toInt - 1)
   }.toSeq
 
