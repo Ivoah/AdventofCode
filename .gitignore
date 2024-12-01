@@ -4,3 +4,5 @@
 .idea/
 .metals/
 .vscode/
+.bsp/
+.scala-build/
