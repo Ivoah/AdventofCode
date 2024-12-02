@@ -1,7 +1,7 @@
 import scala.io.Source
 
 @main
-def main() = {
+def main202401() = {
   val (l1, l2) = Source.fromFile("1.txt")
     .getLines
     .toSeq
