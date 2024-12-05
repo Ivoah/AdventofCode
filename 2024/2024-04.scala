@@ -1,7 +1,7 @@
 import scala.io.Source
 
 @main
-def main202403() = {
+def main202404() = {
   val dirs = Seq(
     (-1, 0),
     (-1, 1),
