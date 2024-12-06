@@ -1,5 +1,8 @@
+//> using dep org.scala-lang.modules::scala-parallel-collections:1.0.4
+
 import scala.io.Source
 import scala.annotation.tailrec
+import scala.collection.parallel.CollectionConverters._
 
 enum Direction(val dx: Int, val dy: Int) {
   def rotated: Direction = {
@@ -50,7 +53,7 @@ def main202406() = {
 
   println(positions.size)
 
-  val loops = positions.count { case (x, y) =>
+  val loops = positions.par.count { case (x, y) =>
     if ((x, y) == start._1) false
     else {
       val newMap = map.patch(y, Seq(map(y).patch(x, Seq('#'), 1)), 1)
