@@ -3,7 +3,7 @@
 (def toLong #(Long/parseLong %))
 (defn parseRange [s]
   (let [ss (map toLong (str/split s #"-"))]
-    (range (nth ss 0) (+ (nth ss 1) 1))))
+    (range (first ss) (+ (last ss) 1))))
 
 (def ids (mapcat
   parseRange
